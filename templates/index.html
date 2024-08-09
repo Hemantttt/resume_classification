@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Categorizer</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Categorizer</h1>
+        <input type="file" id="resumeUpload" accept=".pdf">
+        <button onclick="uploadResume()">Upload and Predict</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function uploadResume() {
+            const fileInput = document.getElementById('resumeUpload');
+            const file = fileInput.files[0];
+            
+            if (file) {
+                const formData = new FormData();
+                formData.append('resume', file);
+
+                fetch('/predict', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerText = 'Predicted Category: ' + data.category;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            } else {
+                alert('Please upload a file.');
+            }
+        }
+    </script>
+</body>
+</html>

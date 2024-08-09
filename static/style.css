@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('https://img.freepik.com/premium-photo/creative-top-view-flat-lay-desk-with-resume-documents-copy-space-bold-yellow-background-minimal-style_70898-3074.jpg?w=1480') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #f0f0f0; /* Fallback color if the image fails to load */
+}
+
+.container {
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 20px auto;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff; /* Blue button background */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#result {
+    text-align: center;
+    margin-top: 20px;
+}
