@@ -7,7 +7,7 @@ from nltk.corpus import stopwords
 
 app = Flask(__name__)
 
-# Load the model and TF-IDF vectorizer
+
 tfidf = pickle.load(open('tfidf.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 
@@ -40,7 +40,7 @@ category_map = {
 }
 
 def clean(text):
-    # Your text cleaning function
+  
     return text
 
 from PyPDF2 import PdfReader
